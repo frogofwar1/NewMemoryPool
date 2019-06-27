@@ -3,6 +3,7 @@ class MyMemoryPool
 {
 
 private:
+	unsigned int m_blockSize;
 	unsigned int m_blockNumber;
 	unsigned int * m_pHead;
 public:
@@ -14,6 +15,7 @@ public:
 	void init(unsigned int blockSize, unsigned int blockNumber);
 	void* alloc();
 	void release(void* p);
+	void expand();
 
 	void printMemory() const;
 };

@@ -58,23 +58,16 @@ int main()
 
 	m.printMemory();
 
-
-	int * val9 = reinterpret_cast<int*> (m.alloc());
-	if (val9 != nullptr) {
-		*val9 = 24;
-		std::cout << "Alloc : " << *val9 << std::endl;
-	}
-
-	m.release(val2);
-	m.release(val6);
-
-	m.printMemory();
-
 	int * val10 = reinterpret_cast<int*> (m.alloc());
 	if (val10 != nullptr) {
 		*val10 = 24;
 		std::cout << "Alloc : " << *val10 << std::endl;
 	}
+
+	m.printMemory();
+
+	m.release(val2);
+	m.release(val6);
 
 	m.printMemory();
 
@@ -84,6 +77,7 @@ int main()
 	m.release(val8);
 
 	m.printMemory();
+
 
 	val = reinterpret_cast<int*> (m.alloc());
 	if (val != nullptr) {
